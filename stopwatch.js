@@ -1,9 +1,12 @@
 function Count() {
+    document.querySelector(".js-start").disabled=true;
     let millisecond = 0;
     let second = 0;
     let minute = 0;
     let hour = 0;
-    let s_prefix = m_prefix= h_prefix= 0;
+    let s_prefix = 0;
+    let m_prefix= 0;
+    let h_prefix=0;
     let intervalId;
 
     function displayNumber() {
@@ -66,4 +69,6 @@ function Count() {
     });
 }
 
-Count();
+document.querySelector(".js-start").addEventListener('click',()=>{
+    Count();
+})
