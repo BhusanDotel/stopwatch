@@ -62,6 +62,17 @@ function Count() {
         if (pause_button.textContent === "Pause!") {
             clearInterval(intervalId);
             pause_button.textContent = "Resume!";
+
+            const reset_button = document.querySelector(".js-reset");
+            reset_button.addEventListener('click', () => {
+
+                document.querySelector(".hour").textContent='00';
+                document.querySelector(".minute").textContent='00';
+                document.querySelector(".second").textContent='00';
+                document.querySelector(".millisecond").textContent='000';
+                
+            });
+
         } else {
             intervalId = setInterval(displayNumber, 13);
             pause_button.textContent = "Pause!";
